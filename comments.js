@@ -1,15 +1,21 @@
-// create simple listener service for comments
+// create web server
 const express = require('express');
 const app = express();
 const port = 3000;
 
-// create a simple route
-app.post('/comments', (req, res) => {
-    console.log('Received a request!');
-    res.send('Hello World!');
+// Create a list of comments
+const comments = [
+    {id:1, author: "John", body: "Hello World"},
+    {id:2, author: "Jane", body: "Hi there"},
+    {id:3, author: "Doe", body: "How are you?"}
+];
+
+// Create a route for comments
+app.get('/comments', (req, res) => {
+    res.json(comments);
 });
 
-// start the server
-// app.listen(port, () => {
-//    console.log(`Listening at http://localhost:${port}`);
-//});
+// Start the web server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
