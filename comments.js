@@ -10,6 +10,6 @@ app.post('/comments', (req, res) => {
 });
 
 // start the server
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//    console.log(`Listening at http://localhost:${port}`);
+//});
